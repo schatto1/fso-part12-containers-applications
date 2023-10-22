@@ -1,0 +1,53 @@
+      ~/cod/fso-part12-containers-applications/script-answers     main ⇡1 ─ 11:40:47 PM   
+❯ docker start -i confident_greider
+root@c35b1cd3b7a0:/# apt update
+Get:1 http://ports.ubuntu.com/ubuntu-ports jammy InRelease [270 kB]
+Get:2 http://ports.ubuntu.com/ubuntu-ports jammy-updates InRelease [119 kB]
+Get:3 http://ports.ubuntu.com/ubuntu-ports jammy-backports InRelease [109 kB]
+Get:4 http://ports.ubuntu.com/ubuntu-ports jammy-security InRelease [110 kB]
+Get:5 http://ports.ubuntu.com/ubuntu-ports jammy/multiverse arm64 Packages [224 kB]
+Get:6 http://ports.ubuntu.com/ubuntu-ports jammy/restricted arm64 Packages [24.2 kB]
+Get:7 http://ports.ubuntu.com/ubuntu-ports jammy/universe arm64 Packages [17.2 MB]
+Get:8 http://ports.ubuntu.com/ubuntu-ports jammy/main arm64 Packages [1758 kB]
+Get:9 http://ports.ubuntu.com/ubuntu-ports jammy-updates/universe arm64 Packages [1163 kB]
+Get:10 http://ports.ubuntu.com/ubuntu-ports jammy-updates/restricted arm64 Packages [847 kB]
+Get:11 http://ports.ubuntu.com/ubuntu-ports jammy-updates/main arm64 Packages [1226 kB]
+Get:12 http://ports.ubuntu.com/ubuntu-ports jammy-updates/multiverse arm64 Packages [27.8 kB]
+Get:13 http://ports.ubuntu.com/ubuntu-ports jammy-backports/universe arm64 Packages [30.7 kB]
+Get:14 http://ports.ubuntu.com/ubuntu-ports jammy-backports/main arm64 Packages [77.8 kB]
+Get:15 http://ports.ubuntu.com/ubuntu-ports jammy-security/universe arm64 Packages [902 kB]
+Get:16 http://ports.ubuntu.com/ubuntu-ports jammy-security/multiverse arm64 Packages [23.4 kB]
+Get:17 http://ports.ubuntu.com/ubuntu-ports jammy-security/main arm64 Packages [964 kB]
+Get:18 http://ports.ubuntu.com/ubuntu-ports jammy-security/restricted arm64 Packages [840 kB]
+Fetched 25.9 MB in 5s (4999 kB/s)                        
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+All packages are up to date.
+root@c35b1cd3b7a0:/# apt install nano
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+Suggested packages:
+  hunspell
+The following NEW packages will be installed:
+  nano
+0 upgraded, 1 newly installed, 0 to remove and 0 not upgraded.
+Need to get 277 kB of archives.
+After this operation, 872 kB of additional disk space will be used.
+Get:1 http://ports.ubuntu.com/ubuntu-ports jammy/main arm64 nano arm64 6.2-1 [277 kB]
+Fetched 277 kB in 1s (300 kB/s)
+debconf: delaying package configuration, since apt-utils is not installed
+Selecting previously unselected package nano.
+(Reading database ... 4389 files and directories currently installed.)
+Preparing to unpack .../archives/nano_6.2-1_arm64.deb ...
+Unpacking nano (6.2-1) ...
+Setting up nano (6.2-1) ...
+update-alternatives: using /bin/nano to provide /usr/bin/editor (editor) in auto mode
+update-alternatives: warning: skip creation of /usr/share/man/man1/editor.1.gz because associated file /usr/share/man/man1/nano.1.gz (of link group editor) doesn't exist
+update-alternatives: using /bin/nano to provide /usr/bin/pico (pico) in auto mode
+update-alternatives: warning: skip creation of /usr/share/man/man1/pico.1.gz because associated file /usr/share/man/man1/nano.1.gz (of link group pico) doesn't exist
+root@c35b1cd3b7a0:/# nano /usr/src/app/index.js
+root@c35b1cd3b7a0:/# cat /usr/src/app/index.js 
+console.log('Hello World')
+root@c35b1cd3b7a0:/# 
