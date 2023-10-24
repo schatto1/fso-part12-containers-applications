@@ -1,0 +1,42 @@
+      ~/code/fso-part12-containers-applications     main ?1 ────── 17s    11:31:14 PM   
+❯ docker run -it ubuntu bash                   
+Unable to find image 'ubuntu:latest' locally
+latest: Pulling from library/ubuntu
+bfbe77e41a78: Pull complete 
+Digest: sha256:2b7412e6465c3c7fc5bb21d3e6f1917c167358449fecac8176c6e496e5c1f05f
+Status: Downloaded newer image for ubuntu:latest
+root@c35b1cd3b7a0:/# ls -lah
+total 56K
+drwxr-xr-x   1 root root 4.0K Oct 22 06:34 .
+drwxr-xr-x   1 root root 4.0K Oct 22 06:34 ..
+-rwxr-xr-x   1 root root    0 Oct 22 06:34 .dockerenv
+lrwxrwxrwx   1 root root    7 Oct  4 02:12 bin -> usr/bin
+drwxr-xr-x   2 root root 4.0K Apr 18  2022 boot
+drwxr-xr-x   5 root root  360 Oct 22 06:34 dev
+drwxr-xr-x   1 root root 4.0K Oct 22 06:34 etc
+drwxr-xr-x   2 root root 4.0K Apr 18  2022 home
+lrwxrwxrwx   1 root root    7 Oct  4 02:12 lib -> usr/lib
+drwxr-xr-x   2 root root 4.0K Oct  4 02:12 media
+drwxr-xr-x   2 root root 4.0K Oct  4 02:12 mnt
+drwxr-xr-x   2 root root 4.0K Oct  4 02:12 opt
+dr-xr-xr-x 237 root root    0 Oct 22 06:34 proc
+drwx------   2 root root 4.0K Oct  4 02:37 root
+drwxr-xr-x   5 root root 4.0K Oct  4 02:38 run
+lrwxrwxrwx   1 root root    8 Oct  4 02:12 sbin -> usr/sbin
+drwxr-xr-x   2 root root 4.0K Oct  4 02:12 srv
+dr-xr-xr-x  13 root root    0 Oct 22 06:34 sys
+drwxrwxrwt   2 root root 4.0K Oct  4 02:37 tmp
+drwxr-xr-x  11 root root 4.0K Oct  4 02:12 usr
+drwxr-xr-x  11 root root 4.0K Oct  4 02:37 var
+root@c35b1cd3b7a0:/# mkdir /usr/src/app
+root@c35b1cd3b7a0:/# cd /usr/src/app/
+root@c35b1cd3b7a0:/usr/src/app# touch index.js
+root@c35b1cd3b7a0:/usr/src/app# ls -lah
+total 8.0K
+drwxr-xr-x 2 root root 4.0K Oct 22 06:35 .
+drwxr-xr-x 1 root root 4.0K Oct 22 06:34 ..
+-rw-r--r-- 1 root root    0 Oct 22 06:35 index.js
+root@c35b1cd3b7a0:/usr/src/app# exit
+exit
+      ~/code/fso-part12-containers-applications     main ────── 1m 14s    11:35:27 PM   
+❯ 
