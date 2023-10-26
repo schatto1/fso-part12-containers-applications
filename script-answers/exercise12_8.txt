@@ -1,0 +1,111 @@
+      ~/cod/fso-part12-containers-applications     main ⇡6 ?1 
+❯ docker exec -it todo-backend bash 
+Error: No such container: todo-backend
+      ~/cod/fso-part12-containers-applications     main ⇡6 ?1 
+❯ docker exec -it mongo-1 bash     
+Error: No such container: mongo-1
+      ~/cod/fso-part12-containers-applications     main ⇡6 ?1 
+❯ docker exec -it 13d5e3a63bbd579a83c53d22f38e55b3d8d7d670cc7a4848097fec65f839c8e b
+ash
+root@13d5e3a63bbd:/# mongosh -u root -p example
+Current Mongosh Log ID: 6539ab8c5e65df1e6238bd21
+Connecting to:          mongodb://<credentials>@127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+2.0.1
+Using MongoDB:          7.0.2
+Using Mongosh:          2.0.1
+
+For mongosh info see: https://docs.mongodb.com/mongodb-shell/
+
+
+To help improve our products, anonymous usage data is collected and sent to MongoDB periodically (https://www.mongodb.com/legal/privacy-policy).
+You can opt-out by running the disableTelemetry() command.
+
+------
+   The server generated these startup warnings when booting
+   2023-10-25T04:38:01.974+00:00: Using the XFS filesystem is strongly recommended with the WiredTiger storage engine. See http://dochub.mongodb.org/core/prodnotes-filesystem
+   2023-10-25T04:38:02.968+00:00: vm.max_map_count is too low
+------
+
+test> show dbs
+admin         100.00 KiB
+config         72.00 KiB
+local          72.00 KiB
+the_database   72.00 KiB
+test> use the_database
+switched to db the_database
+the_database> show collections
+todos
+the_database> db.todos.find({})
+[
+  {
+    _id: ObjectId("65389ba844aeda394d01bc99"),
+    text: 'Write code',
+    done: true
+  },
+  {
+    _id: ObjectId("65389ba844aeda394d01bc9a"),
+    text: 'Learn about containers',
+    done: false
+  },
+  {
+    _id: ObjectId("653983f3215c23d2655de26d"),
+    done: true,
+    __v: 0,
+    text: 'This note has been updated.'
+  }
+]
+the_database> db.todos.insertOne({text: "Increase the number of tools in my toolbelt", done: false})
+{
+  acknowledged: true,
+  insertedId: ObjectId("6539ac3a5e65df1e6238bd22")
+}
+the_database> db.todos.find({})
+[
+  {
+    _id: ObjectId("65389ba844aeda394d01bc99"),
+    text: 'Write code',
+    done: true
+  },
+  {
+    _id: ObjectId("65389ba844aeda394d01bc9a"),
+    text: 'Learn about containers',
+    done: false
+  },
+  {
+    _id: ObjectId("653983f3215c23d2655de26d"),
+    done: true,
+    __v: 0,
+    text: 'This note has been updated.'
+  },
+  {
+    _id: ObjectId("6539ac3a5e65df1e6238bd22"),
+    text: 'Increase the number of tools in my toolbelt',
+    done: false
+  }
+]
+the_database> 
+
+Showing on localhost:3000/todos:
+
+[
+  {
+    _id: "65389ba844aeda394d01bc99",
+    text: "Write code",
+    done: true
+  },
+  {
+    _id: "65389ba844aeda394d01bc9a",
+    text: "Learn about containers",
+    done: false
+  },
+  {
+    _id: "653983f3215c23d2655de26d",
+    done: true,
+    __v: 0,
+    text: "This note has been updated."
+  },
+  {
+    _id: "6539ac3a5e65df1e6238bd22",
+    text: "Increase the number of tools in my toolbelt",
+    done: false
+  }
+]
