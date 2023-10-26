@@ -2,6 +2,6 @@ POST http://localhost:3000/todos/
 Content-Type: application/json
 
 {
-  "text": "Added a fourth time time to test the stats",
+  "text": "Just adding another one for good measure.",
   "done": false
 }
