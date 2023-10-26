@@ -14,6 +14,13 @@ router.post('/', async (req, res) => {
     text: req.body.text,
     done: false
   })
+
+  const redis = require('../redis');
+  let todoCount = await redis.getAsync('added_todos');
+  console.log(todoCount)
+  const updatedCount = await redis.setAsync('added_todos', ++todoCount);
+  console.log(updatedCount)
+
   res.send(todo);
 });
 
