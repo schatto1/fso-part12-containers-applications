@@ -8,6 +8,7 @@ COPY . .
 RUN npm install
 
 ENV DEBUG=todo-frontend:*
+ENV REACT_APP_BACKEND_URL=http://localhost:8888/api/
 
 # npm start is the command to start the application in development mode
 CMD ["npm", "start"]
