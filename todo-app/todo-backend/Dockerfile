@@ -1,12 +1,12 @@
 FROM node:16
   
-WORKDIR /usr/src/app/backend
+WORKDIR /usr/src/server
 
-
-COPY --chown=node:node . .
+# COPY ./todo-backend .
+COPY --chown=node:node ./todo-backend .
 RUN npm ci 
 
 ENV DEBUG=todo-backend:*
 
-USER node
+# USER node
 CMD npm start

@@ -1,13 +1,11 @@
 # The first FROM is now a stage called build-stage
 FROM node:16 AS build-stage
 WORKDIR /usr/src/app
-ENV REACT_APP_BACKEND_URL=http://localhost:3000
+ENV REACT_APP_BACKEND_URL=http://localhost:8888/api/
 
-COPY . .
+COPY ./todo-frontend .
 
 RUN npm ci
-
-RUN CI=true npm test
 
 RUN npm run build
 
