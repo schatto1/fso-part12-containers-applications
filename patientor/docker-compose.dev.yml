@@ -1,0 +1,11 @@
+services:
+  server:                    # The name of the service, can be anything
+    image: patientor-backend    # Declares which image to use
+    build:
+      context: . # The context will pick this directory as the "build context"
+      dockerfile: backend/dev.Dockerfile # This will simply tell which dockerfile to read
+    volumes:
+      - ./backend:/usr/src/patientor/backend # The path can be relative, so ./ is enough to say "the same location as the docker-compose.yml"
+    ports:
+      - 3333:3001
+    container_name: todo-backend # This will name the container todo-backend
