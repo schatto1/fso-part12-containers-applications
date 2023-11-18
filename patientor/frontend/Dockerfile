@@ -1,13 +1,17 @@
-FROM node:16
+FROM node:16 AS build-stage
 
 WORKDIR /usr/src/patientor
 
 COPY ./frontend .
 
 # Change npm ci to npm install since we are going to be in development mode
-RUN npm install
+RUN npm ci
 
-ENV DEBUG=patientor-frontend:*
+RUN npm run build
 
-# npm start is the command to start the application in development mode
-CMD ["npm", "start"]
+# This is a new stage, everything before this is gone, except the files we want to COPY
+FROM nginx:1.20-alpine
+# COPY the directory build from build-stage to /usr/share/nginx/html
+# The target location here was found from the Docker hub page
+
+COPY --from=build-stage /usr/src/patientor/build /usr/share/nginx/html
