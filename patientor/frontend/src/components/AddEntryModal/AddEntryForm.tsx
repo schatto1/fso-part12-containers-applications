@@ -158,42 +158,42 @@ const AddEntryForm = ({ onCancel, onSubmit, diagnoses }: Props) => {
   const addEntry = (event: SyntheticEvent) => {
     event.preventDefault();
     switch (type) {
-      case "HealthCheck":
-        onSubmit({
-          description,
-          date,
-          specialist,
-          diagnosisCodes,
-          healthCheckRating
-        });
-        break;
-      case "Hospital":
-        const discharge = {
-          date: dischargeDate,
-          criteria: dischargeCriteria
-        }
-        onSubmit({
-          description,
-          date,
-          specialist,
-          diagnosisCodes,
-          discharge
-        });
-        break;
-      case "OccupationalHealthcare":
-        const sickLeave = {
-          startDate: startDate,
-          endDate: endDate
-        }
-        onSubmit({
-          description,
-          date,
-          specialist,
-          diagnosisCodes,
-          employerName,
-          sickLeave
-        });
-        break;
+      // case "HealthCheck":
+      //   onSubmit({
+      //     description,
+      //     date,
+      //     specialist,
+      //     diagnosisCodes,
+      //     healthCheckRating
+      //   });
+      //   break;
+      // case "Hospital":
+      //   const discharge = {
+      //     date: dischargeDate,
+      //     criteria: dischargeCriteria
+      //   }
+      //   onSubmit({
+      //     description,
+      //     date,
+      //     specialist,
+      //     diagnosisCodes,
+      //     discharge
+      //   });
+      //   break;
+      // case "OccupationalHealthcare":
+      //   const sickLeave = {
+      //     startDate: startDate,
+      //     endDate: endDate
+      //   }
+      //   onSubmit({
+      //     description,
+      //     date,
+      //     specialist,
+      //     diagnosisCodes,
+      //     employerName,
+      //     sickLeave
+      //   });
+        // break;
       default:
         break;
     }
